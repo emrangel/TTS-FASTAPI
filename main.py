@@ -8,10 +8,13 @@ from modeler.pdfaudio import extract_text, speaks
 import base64
 import os
 import uvicorn
+import tempfile
 
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
+
+tmp_dir = tempfile.gettempdir()
 
 #rute_books = os.path.join(os.getcwd(), "books"
 
@@ -27,7 +30,8 @@ async def upload_file(request: Request):
 async def display_file(request: Request, file: UploadFile = File(...)):
     contents = await file.read()
     filename = secure_filename(file.filename)
-    books = os.path.join(os.getcwd(), "books", filename)
+    #books = os.path.join(os.getcwd(), "books", filename)
+    books = os.path.join(tmp_dir, filename)
     with open(books, "wb") as f:
         f.write(contents)
     with open(books, "rb") as f:
@@ -43,9 +47,9 @@ async def display_file(request: Request, file: UploadFile = File(...)):
 
 @app.get('/send_doc/{filename}')
 async def send_doc(filename: str):
-    filepath = os.path.join(os.getcwd(), "books", filename)
+    filepath = os.path.join(tmp_dir, filename)
     return FileResponse(filepath, media_type="application/pdf", filename=filename, headers={"Content-Disposition": "inline"})
 
 
 if __name__ == '__main__':
-    uvicorn.run(app, host='0.0.0.0', port=8000)
+    uvicorn.run(app, host='0.0.0.0', port=80)
