@@ -1,0 +1,55 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.Pdf {
+    margin-bottom: 20px;
+}
+
+.player {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.box {
+    background-color: rgba(242, 242, 242, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 600px;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+.box h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.audio-player {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.audio-player audio {
+    width: 100%;
+    max-width: 100%;
+}
+
+.audio-player audio::-webkit-media-controls-panel {
+    width: 100%;
+}
+
+.audio-player audio::-webkit-media-controls-play-button,
+.audio-player audio::-webkit-media-controls-volume-slider {
+    display: none;
+}
