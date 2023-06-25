@@ -1,0 +1,102 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor principal */
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(51,122,163,1) 50%, rgba(154,39,39,1) 93%);
+}
+
+/* Fondo degradado */
+.bg-gradient {
+    background: linear-gradient(45deg, #f2f2f2, #d9d9d9);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Títulos */
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+}
+
+#title {
+    margin-top: 10px;
+    font-size: 32px;
+}
+
+/* Descripción */
+#description {
+    font-size: 18px;
+    font-weight: normal;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Botón */
+.btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Responsividad */
+@media screen and (min-width: 768px) {
+
+    /* Ajuste de margen superior para pantallas medianas y grandes */
+    .md\:mt-40 {
+        margin-top: 40px;
+    }
+
+    /* Ajuste de ancho máximo para pantallas medianas y grandes */
+    .max-w-screen-md {
+        max-width: 768px;
+    }
+
+    /* Ajuste de margen para el botón en pantallas medianas y grandes */
+    .mt-10 {
+        margin-top: 10px;
+    }
+
+    /* Ajuste de margen automático para centrar el contenedor principal en pantallas medianas y grandes */
+    .md\:m-auto {
+        margin: auto;
+    }
+
+    /* Centrar horizontalmente el botón en pantallas medianas y grandes */
+    .btn-container {
+        padding: 10px 20px;
+        font-size: 18px;
+        font-weight: bold;
+        text-decoration: none;
+        color: #fff;
+        background-color: #007bff;
+        border-radius: 5px;
+        justify-content: center;
+    }
+}
